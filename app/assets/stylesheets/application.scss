@@ -14,6 +14,11 @@
  *= require_self
  */
 
+ /* Graphical variables */
+@import "fonts";
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'datepicker';
+/*@import 'datepicker';*/
+@import "layout";
+@import 'orders';
