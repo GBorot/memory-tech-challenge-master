@@ -1,5 +1,9 @@
+<div class="header">
+  <div class="title">
+    <h1>Memory</h1>
+  </div>
+</div>
 <div class="container">
-  <h1>Memory</h1>
 
   <div class="country">
     <div class="dropdown">
@@ -13,23 +17,24 @@
     </div>
   </div>
 
-  <div class="summary">
-    <h2>Summary</h2>
-    <div class="revenue">
+  <h2>Summary</h2>
+  <div class="summary inline">
+    <div class="revenue card">
       <h3>Revenue</h3>
       <p><%= @total_revenue %> €</p>
     </div>
-    <div class="avg">
+    <div class="avg card">
       <h3>Average revenue / order</h3>
       <p><%= @avg_order %> €</p>
     </div>
-    <div class="customers">
+    <div class="customers card">
       <h3>Total customers</h3>
       <p>You have <%= @total_customers %> customers</p>
     </div>
   </div>
 
   <div class="monthly">
+    <h2>Revenu per month</h2>
     <p><%= @orders.last.unit_price %> €</p>
   </div>
 </div>
