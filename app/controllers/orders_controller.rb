@@ -8,19 +8,13 @@ class OrdersController < ApplicationController
 
     @total_revenue = @orders.map { |s| s['unit_price'] * s['quantity'] }.reduce(0, :+)
     @countries = Order.pluck(:country).uniq
-  end
 
-  def search_country
-  end
-
-  def search_by_country(country)
     @search_country = Order.where(country: country)
+
+    @avg_order = @orders.map { |e| e['unit_price'] * e['quantity'] }.reduce(0, :+) / @orders.size
+
+    @total_customers = Order.pluck(:customer_id).uniq.size
   end
-
-  def search_by_month(month)
-
-  end
-
 
   private
 
