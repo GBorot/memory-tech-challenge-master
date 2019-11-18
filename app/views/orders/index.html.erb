@@ -4,11 +4,12 @@
   <div class="country">
     <div class="dropdown">
       <h2>Country</h2>
-      <button class="btn-ghost-orange dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your country</button>
-    </div>
-    <p><%= @orders.countries %></p>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+      <button class="dropdown-toggle" type="btn btn-primary" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your country</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% @countries.each do |country| %>
+          <%= link_to country, root_path(query: country), class: "dropdown-item" %>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -16,6 +17,7 @@
     <h2>Summary</h2>
     <div class="revenue">
       <h3>Revenue</h3>
+      <p><%= @total_revenue %> €</p>
     </div>
     <div class="avg">
       <h3>Average revenue / order</h3>

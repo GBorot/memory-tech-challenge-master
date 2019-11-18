@@ -5,20 +5,22 @@ class OrdersController < ApplicationController
     else
       @orders = Order.all
     end
+
+    @total_revenue = @orders.map { |s| s['unit_price'] * s['quantity'] }.reduce(0, :+)
+    @countries = Order.pluck(:country).uniq
   end
 
-  # def countries
-  #   countries = []
-  #   @orders.each do |h|
-  #     if !countries.include?(h[:country])
-  #       countries << h[:country]
-
-  #   end
-  # end
+  def search_country
+  end
 
   def search_by_country(country)
-    @search_result = Order.where(country: country)
+    @search_country = Order.where(country: country)
   end
+
+  def search_by_month(month)
+
+  end
+
 
   private
 
