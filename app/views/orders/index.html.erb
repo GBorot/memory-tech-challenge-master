@@ -6,10 +6,9 @@
       <h2>Country</h2>
       <button class="btn-ghost-orange dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your country</button>
     </div>
+    <p><%= @orders.countries %></p>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <% @orders.each do |country| %>
-        <%= link_to country, root_path(query: country), class:"dropdown-item" %>
-      <% end %>
+
     </div>
   </div>
 
