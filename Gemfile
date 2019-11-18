@@ -3,10 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-# chartkick and bootstrap
+# chartkick, bootstrap and jquery
 gem 'chartkick'
 gem 'groupdate'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'bootstrap-datepicker-rails'
+gem "highcharts-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

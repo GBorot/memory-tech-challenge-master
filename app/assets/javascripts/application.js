@@ -15,7 +15,7 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
-//= require datepicker
+//= require bootstrap-datepicker
 //= require highcharts
 //= require chartkick
 //= require turbolinks
