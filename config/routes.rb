@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   # resources :orders, only: [:index]
 
   get '/orders/:country', to: 'orders#country', as: 'country'
+  get "/search_result", to: "orders#search_result", as: :search_result
   root 'orders#index'
 end

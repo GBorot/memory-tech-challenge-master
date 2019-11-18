@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
 gem "highcharts-rails"
 gem 'pg_search'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

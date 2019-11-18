@@ -1,15 +1,31 @@
 class OrdersController < ApplicationController
+
   def index
-    @orders = Order.all
+    if params[:query].present?
+      @orders = Order.search_by_brand_name_sport_category(params[:query])
+    else
+      @orders = Order.all
+    end
   end
 
-  def country
-    @country = params[:country]
-    @order = Order.select { |order| order.country.include?(@country) }
+  def countries
+    countries = []
+    @orders.each do |h|
+      if !countries.include?(h[:country])
+        countries << h[:country]
+    end
   end
 
-  def month
-    # @order_monthly = Order.all.date.group_by
+  def search_country
+    @orders = Order.pluck(:country).uniq
+  end
+
+  def search_result
+    country = params[:query].split
+    @search_result = Order.select do |order|
+      country.include?(order.country)
+    end
+    redirect_to root_path
   end
 
   private
