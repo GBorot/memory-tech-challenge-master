@@ -17,10 +17,8 @@
  /* Graphical variables */
 @import "fonts";
 
-@import "bootstrap/scss/bootstrap";
 @import 'bootstrap-sprockets';
-@import "home";
-// @import 'bootstrap';
+@import 'bootstrap';
 /*@import 'datepicker';*/
 @import "layout";
 @import 'orders';

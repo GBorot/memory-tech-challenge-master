@@ -8,7 +8,9 @@
   <div class="country">
     <div class="dropdown">
       <h2>Country</h2>
-      <button class="dropdown-toggle" type="btn btn-primary" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose your country</button>
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Choose your country
+      </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <% @countries.each do |country| %>
           <%= link_to country, root_path(query: country), class: "dropdown-item" %>
@@ -34,7 +36,55 @@
   </div>
 
   <div class="monthly">
-    <h2>Revenu per month</h2>
-    <p><%= @orders.last.unit_price %> €</p>
+    <h2>Revenue per month</h2>
+    <p>Choose a starting and an ending date</p>
+
+    <!-- <div id="event_period" class="row">
+      <%#= form_tag api_item_click_tracks_path(@order), remote: true do %>
+        <div class="col-sm-1">
+          <label for="start_date">Start date</label>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="input-group">
+            <input type="text" class="actual_range form-control datepicker" id="start_date" name="start_date">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-1 col-sm-offset-1">
+          <label for="end_date">End date</label>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="input-group">
+            <input type="text" class="actual_range form-control datepicker" id="end_date" name="end_date">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2">
+          <%#= submit_tag 'Show!', class: 'btn btn-primary' %>
+        </div>
+      <%# end %>
+    </div>
+
+    <!-- the startDate is defined 9 years ago because of 2010 in the CSV and the endDate because the tracking in the CSV file doesn't exceed 2011-->
+    <script data-turbolinks-track>
+      $(document).ready(function() {
+        $('#event_period').datepicker({
+          inputs: $('.actual_range'),
+          startDate: '-9y',
+          endDate: '-8y',
+          showToday: 'false',
+          format: 'yyyy-mm-dd'
+        });
+      });
+    </script>
+    <%#= render 'graph' %> -->
   </div>
 </div>
